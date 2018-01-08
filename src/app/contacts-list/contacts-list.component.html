@@ -1,7 +1,11 @@
 
   <ul *ngFor="let contact of contacts">
-    <li (click)="removeContact(contact)">
+    <li>
     {{ contact.firstName + ' ' + contact.lastName }}
+    <button class="btn btn-danger"
+    (click)="removeContact(contact)">
+    Remove
+  </button>
     </li>
   </ul>
 
