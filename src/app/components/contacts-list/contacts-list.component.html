@@ -10,7 +10,7 @@
     <tr *ngFor="let contact of contacts">
       <td>{{ contact.firstName }}</td>
       <td>{{contact.lastName}}</td>
-      <td>{{contact.email}}</td>
+      <td>{{contact.email | uppercase }}</td>
       <td>
         <button class="btn btn-danger"
           (click)="removeContact(contact)">
