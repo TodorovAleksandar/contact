@@ -31,4 +31,8 @@ export class ContactsService {
     
   }
 
+  public getMessage(){
+    return 'Hello';
+  }
+
 }
