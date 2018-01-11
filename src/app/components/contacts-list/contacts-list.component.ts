@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {FilterPipe} from '../../pipes/filter.pipe';
+import {ContactsService} from '../../services/contacts.service';
+
 @Component({
   selector: 'app-contacts-list',
   templateUrl: './contacts-list.component.html',
@@ -7,32 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-  contact = 'First Contact';
   contacts;
-  constructor() {
-    this.contacts = [
-      {
-        firstName: 'John',
-        lastName:  'Doe',
-        email:     'john@example.com'
-      },
-      {
-        firstName: 'Daniel',
-        lastName:  'Ros',
-        email:     'daniel@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hess',
-        email:     'martin@example.com'
-      },
-      {
-        firstName: 'Martin',
-        lastName:  'Hessa',
-        email:     'daniel@example.com'
-      }
+  testModel;
+  searchTerm='';
 
-    ];
+  constructor(private _contactsService: ContactsService) {
+    this.contacts = this._contactsService.getContacts();
   }
 
   removeContact(contact){

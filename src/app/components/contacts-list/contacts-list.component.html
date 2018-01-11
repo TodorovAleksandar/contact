@@ -7,7 +7,7 @@
       <th>Actions</th>
       </tr>
     </thead>
-    <tr *ngFor="let contact of contacts">
+    <tr *ngFor="let contact of contacts | filter:searchTerm">
       <td>{{ contact.firstName }}</td>
       <td>{{contact.lastName}}</td>
       <td>{{contact.email | uppercase }}</td>
@@ -21,6 +21,6 @@
    
    </table>
 
-   <input type="text" name="" [(ngModel)]="testModel">
+  Search term: <input type="text" name="" [(ngModel)]="searchTerm">
    <div>Input value: {{ testModel}} </div>
     

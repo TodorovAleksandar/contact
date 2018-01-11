@@ -10,6 +10,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
+import {ContactsService} from './services/contacts.service';
+
 const appRoutes: Routes = [
   { path: '', component: ContactsListComponent },
   { path: 'contacts', component: ContactsListComponent },
@@ -32,7 +34,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   
-  providers: [],
+  providers: [
+    ContactsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
