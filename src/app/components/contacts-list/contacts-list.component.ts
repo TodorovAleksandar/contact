@@ -15,8 +15,10 @@ export class ContactsListComponent implements OnInit {
   searchTerm='';
 
   constructor(private _contactsService: ContactsService) {
-    this.contacts = this._contactsService.getContacts();
-  }
+  this._contactsService.getContacts().subscribe(contacts =>{
+    this.contacts =contacts;
+  });
+}
 
   removeContact(contact){
     let index = this.contacts.indexOf(contact);
